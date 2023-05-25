@@ -1,20 +1,28 @@
-<app-modal-warning (success)="confirmarcionModalWarning($event)"> </app-modal-warning>
 
-<div class="content-router h-full-extra">
+<p-toast key="alerta" position="top-center"></p-toast>
+<app-modal-registro [id_usuario] = "usuarioSeleccionado" (success)="success($event)"></app-modal-registro>
+<app-modal-warning (success)="success($event)"> </app-modal-warning>
+
+<div class="bg-primary-50 h-full-extra">
     <br>
     <div class="container-ng">
         <div class="flex justify-between items-center py-5">
             <h1 class="title-h3">Usuario</h1>
-            <button class="btn-primary" *ngIf="dataUsuarioBoolean">Crear Usuario</button>
+            <button class="btn-primary" *ngIf="dataUsuarioBoolean" (click)="registrarUsuario()">Crear Usuario</button>
         </div>
         <div class="box-white">
             <div class="box-header border-b-2">
-                <div class="w-5/12">
+                <div class="w-4/12">
                     <div class="box-title">Lista de usuarios</div>
                 </div>
-                <div class="w-7/12 flex justify-end px-2">
+                <div class="w-5/12 flex justify-end px-2" *ngIf="dataUsuarioBoolean">
                     <p-dropdown [options]="paginacionSelect" [(ngModel)]="paginacionlist" optionLabel="item"
                         optionValue="item">
+                    </p-dropdown>
+                </div>
+                <div class="w-3/12 pl-2" *ngIf="dataUsuarioBoolean">
+                    <p-dropdown [options]="filtroSelect" [(ngModel)]="filtrolist" optionLabel="item"
+                        optionValue="value"  styleClass="input-form-full"  (onChange)="selectFiltro()">
                     </p-dropdown>
                 </div>
             </div>
@@ -26,24 +34,20 @@
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col" class="relative px-6 py-3">
-                                                <span class="sr-only">Opciones</span>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                                                OPCIONES
                                             </th>
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Nombre y Apellido
-                                            </th>
-                                            <!--<th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Tipo de usuario
-                                        </th>-->
-                                            <th scope="col"
-                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                DNI
+                                                ID
                                             </th>
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                Estado
+                                                USUARIO
+                                            </th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                ESTADO
                                             </th>
                                         </tr>
                                     </thead>
@@ -51,48 +55,30 @@
                                         <tr
                                             *ngFor="let usuario of dataUsuario | paginate: { itemsPerPage: paginacionlist, currentPage: paginacion }">
                                             <td
-                                                class="px-6 py-4 mt-1 whitespace-normal break-words text-right text-sm font-medium flex justify-end items-center">
-                                                <button class="btn-success-rounded flex justify-center items-center" (click)="editarUsuario()">
+                                                class="px-6 py-4 whitespace-normal break-words text-left text-sm font-medium flex items-center">
+                                                <button class="btn-success-rounded flex justify-center items-center"
+                                                    (click)="editarUsuario(usuario.id_usuario)" title="Editar">
                                                     <fa-icon [icon]="faEdit"></fa-icon>
+                                                </button>
+                                                <button class="btn-danger-rounded flex justify-center items-center"
+                                                    (click)="eliminarUsuario(usuario.id_usuario,usuario.nombre_usuario)"
+                                                    title="Eliminar">
+                                                    <fa-icon [icon]="faTrash"></fa-icon>
                                                 </button>
                                             </td>
                                             <td class="px-6 py-4 whitespace-normal break-words">
-                                                <div class="flex items-center">
-                                                    <div class="flex-shrink-0 h-10 w-10">
-                                                        <img class="h-10 w-10 rounded-full"
-                                                            src="https://ui-avatars.com/api/?name={{ usuario.nombre_usuario }} {{ usuario.apellido_paterno }}&color=7F9CF5&background=EBF4FF"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="ml-4">
-                                                        <div class="text-sm font-medium text-gray-900">
-                                                            {{ usuario.nombre_usuario }} {{
-                                                            usuario.apellido_paterno }} {{
-                                                            usuario.apellido_materno }}
-                                                        </div>
-                                                        <div class="text-sm text-gray-500">
-                                                            {{ usuario.email }}
-                                                        </div>
-                                                    </div>
+                                                <div class="text-sm text-dark-900">{{ usuario.id_usuario }}
                                                 </div>
                                             </td>
-                                            <!--<td class="px-6 py-4 whitespace-normal break-words">
-                                            <div class="text-sm text-dark-900">
-                                                <span>
-                                                    <span class="py-1 px-4 text-hdcx12 mb-2 mr-2 font-medium font-roboto bg-primary-600 rounded-full text-white">
-                                                        {{ usuario.tipo_usuario }}
-                                                    </span>
-                                                </span>
-                                            </div>
-                                        </td>-->
                                             <td class="px-6 py-4 whitespace-normal break-words">
-                                                <div class="text-sm text-dark-900">{{ usuario.dni_usuario }}
+                                                <div class="text-sm text-dark-900">{{ usuario.nombre_usuario }}
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-normal break-words">
                                                 <span
                                                     class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
                                                     [ngClass]="{ 'bg-danger-100 text-danger-800' : !usuario.estado , 'bg-success-100 text-success-800' : usuario.estado }">
-                                                    {{ (usuario.estado) ? 'Activado' : 'Desactivado' }}
+                                                    {{ (usuario.estado) ? 'Activo' : 'Inactivo' }}
                                                 </span>
                                             </td>
                                         </tr>
@@ -183,7 +169,7 @@
                             comienza
                             ahora a
                             registrar a tus usuarios</p>
-                        <a routerLink="/usuario/crear" class="btn-primary mt-5">Crear Usuario</a>
+                        <button (click)="registrarUsuario()" class="btn-primary mt-5">Crear Usuario</button>
                     </div>
                 </ng-template>
 
@@ -191,3 +177,5 @@
         </div>
     </div>
 </div>
+
+<app-loader></app-loader>

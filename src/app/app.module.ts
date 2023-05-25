@@ -24,6 +24,8 @@ import localEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 
 import { ModalWarningModule } from './components/modal/modal-warning/modal-warning.module';
+import { LoaderModule } from './components/loader/loader.module';
+import {ToastModule} from "primeng/toast";
 
 registerLocaleData(localEs, 'es');
 
@@ -50,7 +52,9 @@ registerLocaleData(localEs, 'es');
     
     HttpClientModule,
 
-    ModalWarningModule
+    ModalWarningModule,
+    LoaderModule,
+    ToastModule
   ],
 
   providers: [

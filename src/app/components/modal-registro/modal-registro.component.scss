@@ -1,0 +1,21 @@
+.Loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(56, 53, 53, 0.568);
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  left: 0px;
+  top: 0px;
+}
+
+.container-load {
+  /*position: relative;*/
+  position: absolute;
+  z-index: 1060;
+}

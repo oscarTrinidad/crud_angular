@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/*archivos Sass*/
+@import "assets/scss/component/variables";
+@import "assets/scss/component/general";
+@import "assets/scss/component/title";
+@import "assets/scss/component/text";
+@import "assets/scss/component/input";
+@import "assets/scss/component/button";
+@import "assets/scss/component/loader";
+@import "assets/scss/component/select";
+@import "assets/scss/component/box";
+@import "assets/scss/component/drawer";
+@import "assets/scss/component/chips";

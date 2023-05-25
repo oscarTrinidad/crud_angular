@@ -1,0 +1,7 @@
+@for $i from 1 through 6{
+    .title-h#{$i}{
+      font-size: 50px - (5 * $i);
+      font-family: 'Rubik', sans-serif;
+    }
+  }
+  

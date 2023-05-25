@@ -1,0 +1,38 @@
+.text-error {
+    @apply text-hdcx12 text-danger-500 font-roboto font-normal duration-100 ease-in-out;
+  }
+  
+  .input-error {
+    @apply border-danger-500 border duration-100 ease-in-out;
+  }
+  
+  .input-form-full {
+    @apply w-full rounded border transition-all duration-100 ease-in border-gray-200 focus:border-primary-900 font-roboto text-hdcx14;
+    height: 37px;
+    //   box-shadow: 0 0 0 0.5px transparent;
+  
+    &:focus {
+      @apply border-primary-900 transition-all ease-in duration-100;
+      box-shadow: 0 0 0 0.5px $primary;
+    }
+  }
+  
+  .input-form-full-internal {
+    input {
+      @apply w-full rounded border border-gray-200 focus:border-primary-900 font-roboto text-hdcx14;
+      height: 37px;
+  
+      &:focus {
+        @apply transition-all ease-in duration-100;
+        box-shadow: 0 0 0 0.5px $primary !important;
+        border: 1px solid $primary !important;
+      }
+    }
+  }
+  
+  .input-checkbox {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  

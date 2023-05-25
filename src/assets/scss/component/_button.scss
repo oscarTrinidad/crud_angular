@@ -1,0 +1,137 @@
+.btn-primary {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-primary-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-primary-700 focus:outline-none sm:w-auto sm:text-sm;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-primary-full {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-primary-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-primary-700 focus:outline-none;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-danger {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-danger-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-danger-700 focus:outline-none sm:w-auto sm:text-sm;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-danger-full {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-danger-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-danger-700 focus:outline-none;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  button:disabled {
+    @apply opacity-70 cursor-not-allowed;
+  }
+  
+  .btn-success {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-success-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-success-700 focus:outline-none sm:w-auto sm:text-sm;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-success-full {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-success-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-success-700 focus:outline-none;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-info {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-info-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-info-700 focus:outline-none sm:w-auto sm:text-sm;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-gray {
+    @apply w-full inline-flex justify-center rounded border border-transparent shadow-sm px-4 py-2 bg-gray-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-gray-700 focus:outline-none sm:w-auto sm:text-sm;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-gray-full-br0 {
+    @apply w-full inline-flex justify-center border border-transparent shadow-sm px-4 py-2 bg-gray-600 transition-all ease-in duration-100 text-base font-medium text-white hover:bg-gray-700 focus:outline-none;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  
+  .btn-info-rounded {
+    @apply h-8 w-8 rounded-full text-info-600 transition-all duration-100 ease-in outline-none hover:shadow hover:bg-info-100 focus:outline-none;
+    font-size: 1rem;
+  }
+  
+  .btn-success-rounded {
+    @apply h-8 w-8 rounded-full text-success-600 transition-all duration-100 ease-in outline-none hover:shadow hover:bg-success-100 focus:outline-none;
+    font-size: 1rem;
+  }
+  
+  .btn-success-header-tabview {
+    @apply h-6 w-6 rounded-full text-success-600 transition-all duration-100 ease-in outline-none hover:shadow hover:bg-success-100 focus:outline-none;
+    font-size: 1rem;
+  }
+  
+  .btn-danger-rounded {
+    @apply h-8 w-8 rounded-full text-danger-900 transition-all duration-100 ease-in outline-none hover:shadow hover:bg-danger-100 focus:outline-none;
+    font-size: 1rem;
+  }
+  
+  .btn-gray-rounded {
+    @apply h-8 w-8 rounded-full text-gray-900 transition-all duration-100 ease-in outline-none hover:shadow hover:bg-gray-100 focus:outline-none;
+    font-size: 1rem;
+  }
+  
+  .btn-line-primary {
+    @apply px-3 py-2 transition-all duration-100 ease-in text-primary-500 font-roboto font-medium border border-primary-500 cursor-pointer rounded focus:border-primary-500 hover:bg-primary-500 hover:text-white;
+  
+    &:focus {
+      border-color: $primary500 !important;
+      outline: none;
+    }
+  }
+  
+  .btn-line-primary-active {
+    @apply px-3 py-2 transition-all duration-100 ease-in text-white bg-primary-500 font-roboto font-medium border border-primary-500 cursor-pointer rounded focus:border-primary-500 hover:bg-primary-500 hover:text-white;
+    &:focus {
+      border-color: $primary500 !important;
+      outline: none;
+    }
+  }
+  // estilo de botones lineal fondo transparente
+  
+  .btn-primary-line {
+    @apply w-full inline-flex justify-center rounded border border-primary-600 shadow-sm px-4 py-2 bg-transparent transition-all ease-in duration-100 text-base font-medium text-primary-600 hover:bg-primary-700 hover:text-white focus:outline-none sm:w-auto sm:text-sm;
+  
+    &:active {
+      transform: scale(0.98);
+      @apply transition-all ease-in duration-100;
+    }
+  }
+  

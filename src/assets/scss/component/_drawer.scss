@@ -1,0 +1,32 @@
+.drawer{
+    height: 100%;
+    @apply w-full absolute top-0 right-0 -z-2 overflow-hidden transition-all duration-100 ease-in;
+  
+    &-bg{
+      height: 100%;
+      @apply w-full absolute top-0 right-0 z-999 bg-dark-500 opacity-60
+    }
+  
+    &-content{
+      height: 100%;
+      transform: translateX(100%);
+      transition: all .5s;
+      @apply absolute top-0 right-0 shadow bg-white z-999;
+    }
+  
+    &-header{
+      @apply px-3 py-4 flex justify-between items-center sticky top-0 bg-white;
+    }
+  
+  }
+  
+  .drawer-active{
+  
+    @apply transition-all duration-100 ease-in z-999;
+  
+    .drawer-content{
+      transform: translateX(0);
+      transition: all 0.5s;
+    }
+  }
+  

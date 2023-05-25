@@ -1,0 +1,58 @@
+.content-router {
+    overflow: auto;
+    height: calc(100vh - 56px);
+    transition: all 0.8s;
+    @apply relative;
+  }
+  
+  .container-ng {
+    padding: 0px 40px;
+    //width: calc(100% - 220px);
+  
+    @media (max-width: 1440px) {
+      padding: 0px 40px;
+    }
+  }
+  
+  .container-ng-cabecera {
+    padding-left: 60px;
+    padding-right: 60px;
+  
+    @media (max-width: 1440px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  
+  .h-full-router {
+    height: calc(100vh - 56px);
+  }
+  
+  .full-page .h-full-router {
+    height: 100vh
+  }
+  
+  .p-accordion
+    .p-accordion-header:not(.p-disabled)
+    .p-accordion-header-link:focus {
+    box-shadow: none !important;
+  }
+  
+  input {
+    outline: none !important;
+    box-shadow: none !important;
+  
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus{
+    box-shadow: none !important;
+  }
+  
+  dyn-group{
+    display: flex;
+    flex-wrap: wrap;
+  }

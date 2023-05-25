@@ -1,0 +1,24 @@
+.toggle-card-user-header {
+  top: 100%;
+  right: 60px;
+  @apply absolute bg-white px-3 py-2 rounded-md;
+}
+.w-content-data{
+  width: calc(100% - 220px);
+  transition: all 0.3s;
+}
+
+.w-content-data-full{
+  width: calc(100% - 38px);
+  transition: all 0.3s;
+}
+
+.isDisabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.isDisabled:hover {
+  cursor: not-allowed;
+}
+

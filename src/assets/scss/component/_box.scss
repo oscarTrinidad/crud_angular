@@ -1,0 +1,19 @@
+.box-white {
+  @apply bg-white rounded shadow mb-6;
+}
+.box-header {
+  //height: 55px;
+  @apply px-4 py-3 flex justify-between items-center border-dark-50 border-b-4;
+}
+
+.box-title {
+  @apply text-hdcx18 text-gray-500 font-medium font-roboto;
+}
+
+//.box-body{
+//  @apply py-4 px-3
+//}
+
+.box-footer {
+  @apply bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse;
+}
